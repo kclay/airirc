@@ -24,6 +24,7 @@ package com.conceptualideas.airirc.commands
 	import com.conceptualideas.airirc.AirIRC;
 	import com.conceptualideas.airirc.commands.context.CommandContext;
 	import com.conceptualideas.airirc.commands.server.PongCommand;
+	import com.conceptualideas.airirc.commands.server.QuoteCommand;
 	import com.conceptualideas.airirc.commands.server.RawServerCommand;
 	import com.conceptualideas.airirc.events.AirIRCEvent;
 	import com.conceptualideas.airirc.events.ChannelEvent;
@@ -58,7 +59,7 @@ package com.conceptualideas.airirc.commands
 			var parsedData:Object
 
 
-			trace("Command ",":"+response.line+":");
+			trace("Command ", ":" + response.line + ":");
 			switch (response.command){
 				case Commands.ERROR:
 					parsedData = response.params;
@@ -87,7 +88,19 @@ package com.conceptualideas.airirc.commands
 					}
 					break;
 			}
+			if (!parsedData){
+				parsedData = resolveWildCardResponses(response);
+			}
 			return parsedData;
+
+		}
+
+		private function resolveWildCardResponses(response:ServerResponse):Object
+		{
+			if (response.params.indexOf("/QUOTE PASS")){
+				return new QuoteCommand(response);
+			}
+			return null;
 
 		}
 		public function executeCommand(context:CommandContext):void
