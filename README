@@ -2,3 +2,5 @@ A simple IRC lib for Adobe Air
 
 If you get a Security Error make sure to allow your local path to the flash sandbox via
 http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager04.html
+
+DON'T set it to your  it to your desktop on windows, some stupid adobe problem
