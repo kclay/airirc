@@ -24,7 +24,7 @@ package
 			irc.addEventListener(AirIRCEvent.CONNECTED_TO_SERVER, onConnectedToServer);
 			irc.addEventListener(ChannelEvent.STATUS, channelStatusHandler, false, 0, true);
 			var info:ConnectionInfo  = new ConnectionInfo();
-			info.host = "chat.freenode.net";
+			info.host = "irc.efnet.net"
 			info.port = 6667;
 			info.nick = "airirc";
 
@@ -46,7 +46,7 @@ package
 		private function onConnectedToServer(e:AirIRCEvent):void
 		{
 			trace("CONNECT");
-			irc.invoke("/join #playbook-dev");
+			irc.invoke("/join #actionscript");
 
 
 		}
