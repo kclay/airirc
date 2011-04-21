@@ -58,8 +58,8 @@ package com.conceptualideas.airirc.commands
 		{
 			var parsedData:Object
 
-
-			trace("Command ", ":" + response.line + ":");
+			trace(response.command)
+			//trace("Command ", ":" + response.line + ":");
 			switch (response.command){
 				case Commands.ERROR:
 					parsedData = response.params;
@@ -97,7 +97,7 @@ package com.conceptualideas.airirc.commands
 
 		private function resolveWildCardResponses(response:ServerResponse):Object
 		{
-			if (response.params.indexOf("/QUOTE PASS")){
+			if (response.params.indexOf("/QUOTE PASS") !=-1){
 				return new QuoteCommand(response);
 			}
 			return null;

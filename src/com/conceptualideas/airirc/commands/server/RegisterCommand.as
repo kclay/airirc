@@ -22,7 +22,7 @@ package com.conceptualideas.airirc.commands.server
 	 *	THE SOFTWARE.
 	 */
 	import com.conceptualideas.airirc.commands.BaseIRCCommand;
-	
+
 	import com.conceptualideas.airirc.commands.context.CommandContext;
 
 	/**

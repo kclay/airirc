@@ -36,7 +36,7 @@ package com.conceptualideas.airirc.utils
 
 		public static const RESPONSE_REGEX:RegExp = new RegExp(
 			":?((?P<nick>[\\S]+)!(?P<user>[\\S]+)@(?P<host>[\\S]+) )?"+
-			"((?P<channel>[#$]{1}[\\S]+) )?"+
+			"((?P<channel>[#$]{0,1}?[\\S]+) )?"+
 			"((?P<command>[\\S]+) )"+
 			"((?<to>[\\S]+) )?"+
 			"((?<target>[\\S]+) )?"+

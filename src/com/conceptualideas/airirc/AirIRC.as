@@ -78,6 +78,8 @@ package com.conceptualideas.airirc
 		{
 			if (e is ChannelEvent){
 				handleChannelEvents(ChannelEvent(e));
+			}else {
+				dispatchEvent(e);
 			}
 
 
@@ -158,6 +160,7 @@ package com.conceptualideas.airirc
 			while (!buffer.end && (line = buffer.readLine()) != null){
 
 
+				trace(line);
 				response.parse(line);
 				parserReturn = parser.handle(response);
 
@@ -185,7 +188,7 @@ package com.conceptualideas.airirc
 			if (onResponseCallback != null){
 				onResponseCallback(response);
 			} else{
-				trace(response);
+			//	trace(response);
 			}
 		}
 		public function getChannelByName(name:String):IRCChannel

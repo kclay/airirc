@@ -1,6 +1,7 @@
 package
 {
 	import com.conceptualideas.airirc.AirIRC;
+	import com.conceptualideas.airirc.ConnectionInfo;
 	import com.conceptualideas.airirc.events.AirIRCEvent;
 	import com.conceptualideas.airirc.responses.ServerResponse;
 	import flash.display.Bitmap;
@@ -19,16 +20,22 @@ package
 		{
 			irc = new AirIRC();
 			irc.addEventListener(AirIRCEvent.CONNECTED_TO_SERVER, onConnectedToServer);
-			irc.connect("irc.choopa.net", 6667);
-		
-			
+			var info:ConnectionInfo  = new ConnectionInfo();
+			info.host = "chat.freenode.net";
+			info.port = 6667;
+			info.nick = "airirc";
+
+			irc.connect(info);
+
+
 
 
 		}
 
 		private function onConnectedToServer(e:AirIRCEvent):void
 		{
-			irc.invoke("/join #airirc");
+			trace("CONNECT");
+			irc.invoke("/join #playbook-dev");
 
 		}
 
