@@ -47,7 +47,8 @@ package com.conceptualideas.airirc
 	 */
 	[Event(name="connectedToServer",type="com.conceptualideas.airirc.events.AirIRCEvent")]
 	[Event(name="connectedToSocket",type="com.conceptualideas.airirc.events.AirIRCEvent")]
-	[Event(name="status",type="com.conceptualideas.airirc.events.ChannelEvent")]
+	[Event(name = "status", type = "com.conceptualideas.airirc.events.ChannelEvent")]
+	
 	public class AirIRC extends EventDispatcher
 	{
 
