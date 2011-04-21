@@ -2,7 +2,7 @@ package com.conceptualideas.airirc.commands.channel
 {
 
 	/**
-	 * Copyright (c) <2011> <K>
+	 * Copyright (c) <2011> Keyston Clay <http://ihaveinternet.com>
 	 *
 	 *  Permission is hereby granted, free of charge, to any person obtaining a copy
 	 *	of this software and associated documentation files (the "Software"), to deal
